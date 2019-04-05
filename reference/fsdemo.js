@@ -18,7 +18,7 @@ fs.writeFile(path.join(__dirname, "/text", "test.txt"), "hello world", err => {
   console.log("new file created");
 }); */
 
-fs.writeFile(
+/* fs.writeFile(
   path.join(__dirname, "/test", "text.txt"),
   "test file, hello world",
   err => {
@@ -34,5 +34,21 @@ fs.writeFile(
         console.log("appended");
       }
     );
+  }
+); */
+
+//Read file
+fs.readFile(path.join(__dirname, "/test", "text.txt"), "utf8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+//Rename file
+fs.rename(
+  path.join(__dirname, "/test", "text.txt"),
+  path.join(__dirname, "/test", "texttest.txt"),
+  err => {
+    if (err) throw err;
+    console.log("renamed");
   }
 );
